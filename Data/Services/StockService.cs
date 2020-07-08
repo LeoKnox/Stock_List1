@@ -6,7 +6,7 @@ namespace Stocks.Data
     {
         public void AddStock(Stock stock)
         {
-            throw new System.NotImplementedException();
+            Data.Stock.Add(stock)
         }
 
         public void DeleteStock(int stockId)
