@@ -25,6 +25,13 @@ namespace Stock_List.Controllers
             return Ok(allStocks);
         }
 
+        [HttpGet("SingleStock/{id}")]
+        public IActionResult GetStockById(int id)
+        {
+            var stock = _service.GetStockById(id);
+            return Ok(stock);
+        }
+
         [HttpPost("AddStock")]
         public IActionResult AddStock([FromBody]Stock stock)
         {
@@ -35,11 +42,18 @@ namespace Stock_List.Controllers
             return Ok();
         }
 
-        [HttpPut("UpdateTrip/{id}")]
+        [HttpPut("UpdateStock/{id}")]
         public IActionResult UpdateTrip(int id, [FromBody]Stock stock)
         {
             _service.UpdateStock(id, stock);
             return Ok(stock);
+        }
+
+        [HttpDelete("DeleteStock/{id}")]
+        public IActionResult DeleteStock(int id)
+        {
+            _service.DeleteStock(id);
+            return Ok();
         }
     }
 }
