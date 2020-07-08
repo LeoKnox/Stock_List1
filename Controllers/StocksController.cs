@@ -18,6 +18,13 @@ namespace Stock_List.Controllers
             this._service = service;
         }
 
+        [HttpGet("[action]")]
+        public IActionResult GetStocks()
+        {
+            var allStocks = _service.GetAllStocks();
+            return Ok(allStocks);
+        }
+
         [HttpPost("AddStock")]
         public IActionResult AddStock([FromBody]Stock stock)
         {
