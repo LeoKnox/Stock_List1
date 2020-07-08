@@ -24,7 +24,14 @@ namespace Stocks.Data
 
         public void UpdateStock(int stockId, Stock stock)
         {
-            throw new System.NotImplementedException();
+            var oldStock = Data.Stock.FirstOrDefault(n => n.Id == stockId);
+            if(oldStock != null)
+            {
+                oldStock.Name = stock.Name;
+                oldStock.Description = stock.Description;
+                oldStock.DatePurchased = stock.DatePurchased;
+                oldStock.DateSold = stock.DateSold;
+            }
         }
     }
 }

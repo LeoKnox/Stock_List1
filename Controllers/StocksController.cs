@@ -34,5 +34,12 @@ namespace Stock_List.Controllers
             }
             return Ok();
         }
+
+        [HttpPut("UpdateTrip/{id}")]
+        public IActionResult UpdateTrip(int id, [FromBody]Stock stock)
+        {
+            _service.UpdateStock(id, stock);
+            return Ok(stock);
+        }
     }
 }
