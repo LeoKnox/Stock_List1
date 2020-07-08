@@ -7,7 +7,7 @@ namespace Stocks.Data
     {
         public void AddStock(Stock stock)
         {
-            Data.Stock.Add(stock)
+            Data.Stock.Add(stock);
         }
 
         public void DeleteStock(int stockId)
