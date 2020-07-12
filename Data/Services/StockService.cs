@@ -1,38 +1,34 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using WebApplication1.Data;
+using WebApplication1.Data.Models;
 
-namespace Stocks.Data
+namespace WebApplication1
 {
     public class StockService : IStockService
     {
         public void AddStock(Stock stock)
         {
-            Data.Stock.Add(stock);
+            throw new System.NotImplementedException();
         }
 
         public void DeleteStock(int stockId)
         {
-            var stock = Data.Stock.FirstOrDefault(n => n.Id == stockId);
-            if (stock != null)
-            {
-                Data.Stock.Remove(stock);
-            }
+            throw new System.NotImplementedException();
         }
 
-        public List<Stock> GetAllStocks() => Data.Stock.ToList();
+        public List<Stock> GetAllStocks()
+        {
+            throw new System.NotImplementedException();
+        }
 
-        public Stock GetStockById(int stockId) => Data.Stock.FirstOrDefault(n => n.Id == stockId);
+        public Stock GetStockById(int stockId)
+        {
+            throw new System.NotImplementedException();
+        }
 
         public void UpdateStock(int stockId, Stock stock)
         {
-            var oldStock = Data.Stock.FirstOrDefault(n => n.Id == stockId);
-            if(oldStock != null)
-            {
-                oldStock.Name = stock.Name;
-                oldStock.Description = stock.Description;
-                oldStock.DatePurchased = stock.DatePurchased;
-                oldStock.DateSold = stock.DateSold;
-            }
+            throw new System.NotImplementedException();
         }
     }
 }

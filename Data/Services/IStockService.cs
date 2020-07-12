@@ -1,8 +1,11 @@
-﻿namespace Stocks.Data
+﻿using System.Collections.Generic;
+using WebApplication1.Data.Models;
+
+namespace WebApplication1.Data
 {
     public interface IStockService
     {
-        System.Collections.Generic.List<Stock> GetAllStocks();
+        List<Stock> GetAllStocks();
         Stock GetStockById(int stockId);
         void UpdateStock(int stockId, Stock stock);
         void DeleteStock(int stockId);
